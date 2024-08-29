@@ -1,34 +1,27 @@
 
 
-public class Teacher {
-
-    private int id;
-    private String name;
-    private String subject;
-
-    public Teacher(int id, String name, String subject) {
-        this.id = id;
-        this.name = name;
-        this.subject = subject;
+public class Teacher extends User {
+    private int teacherID;
+    private String name ;
+    
+    public Teacher(String firstName, String secondName, String lastName) {
+        super(firstName, secondName, lastName);
+        this.name = "Techer";
+        teacherID++;
+        
     }
-
-    public int getId() {
-        return id;
+    
+    public int getTeacherID() {
+        return teacherID;
     }
-
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @Override
+    public String toString() {
+        
+        return "ID- " + teacherID + "; " + super.toString() + ": " + name ;
     }
-
-    public String getSubject() {
-        return subject;
-    }
-
-    public void setSubject(String subject) {
-        this.subject = subject;
-    }
+    
 }

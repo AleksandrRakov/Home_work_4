@@ -1,23 +1,17 @@
 
 
 public class Main {
-
     public static void main(String[] args) {
-        TeacherService teacherService = new TeacherService();
-        TeacherView teacherView = new TeacherView(teacherService);
-        TeacherController teacherController = new TeacherController(teacherService, teacherView);
+        StudentController studentController = new StudentController();
+        studentController.create("Иван", "Игоревич", "Лут");
+        studentController.create("Марк", "Андреевич", "Куций");
+        // studentController.printStudentList();
 
-        // Создание учителей
-        teacherController.createTeacher(1, "Ivanov", "Mathematics");
-        teacherController.createTeacher(2, "Petrov", "Physics");
-
-        // Отображение списка учителей
-        teacherController.displayTeachers();
-
-        // Редактирование учителя
-        teacherController.editTeacher(1, "Sidorov", "Russian language");
-
-        // Отображение списка учителей после редактирования
-        teacherController.displayTeachers();
+        ControllerTeacher controllerTeacher = new ControllerTeacher();
+        controllerTeacher.create("Ирина", "Aндреевна", "Сидорова");
+        controllerTeacher.create("Тарас", "Григорьевич", "Шевченко");
+        // controllerTeacher.create("Алия", "Иосифовна", "Руть");
+        controllerTeacher.printTeacherList();
+        // controllerTeacher.modifyTeacher();
     }
 }
